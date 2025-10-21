@@ -1,0 +1,23 @@
+.tabela{
+  display: flex;
+  justify-content: center;
+  margin-top: 200px;
+}
+
+.tabela table {
+  border-collapse: collapse; 
+  width: 50%; 
+  
+}
+
+.tabela th, td {
+  border: 1px solid #ddd; 
+  padding: 8px; 
+  text-align: left; 
+  
+}
+
+th {
+  background-color: #f3c88f; 
+ 
+}

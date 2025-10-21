@@ -1,0 +1,36 @@
+ body {
+            font-family: Arial, sans-serif;
+            background-color: lightgray;
+            text-align: center;
+            padding-top: 50px;
+            transition: background-color 0.5s;
+        }
+
+        .digite {
+            background-color: white;
+            display: inline-block;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px gray;
+        }
+
+        .input {
+            padding: 5px;
+            margin: 5px;
+        }
+
+        button {
+            padding: 6px 10px;
+            cursor: pointer;
+        }
+
+        #resultado {
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+         #icone {
+            font-size: 22px;
+            margin-left: 8px;
+            font-weight: bold;
+        }

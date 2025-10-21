@@ -1,0 +1,184 @@
+
+/* NavBar */
+.NavBar{
+  display: flex;
+  padding: 1%;
+  flex-direction: row;
+  justify-content: space-around;
+  
+}
+
+.NavBar span{
+  
+  font-size: 20px;
+  color: rgb(112, 112, 112);
+  
+}
+
+/* Imagens */
+
+
+.Inicio{
+  display: flex;
+  justify-content: space-between;
+  padding: 1%;
+}
+
+.img01 img{
+  height: 80%;
+  width: 80%;
+  margin-top: -5px;
+  margin-left: 20px;
+}
+
+.info{
+ justify-content: flex-end;
+    width: 600px;
+    margin-top: 15px;
+}
+.data{
+ display: flex;
+    justify-content: space-between;
+}
+
+.redessociais{
+   display: flex;
+    justify-content: space-between;
+}
+
+/* Títulos e Textos */
+h1{
+  margin-left: 55px;
+  color: rgb(190, 74, 74);
+}
+
+.noticias{
+  display: flex;
+  padding: 1%;
+}
+.ncarro{
+  margin-left: 35px;
+  background-color: #f20e34;
+    width: 620px;
+    height: 400px;
+}
+
+
+.txtimg02{
+  color: white;
+  display: flex; 
+  padding: 2%;
+  justify-content: space-between;
+}
+
+.npolemica{
+    margin-left: 35px;
+}
+
+.tt2{
+  color: rgb(190, 74, 74);
+  font-weight: bold;
+}
+
+.subt2{
+  margin-top: 10px;
+  color: rgb(112, 112, 112);
+}
+
+.subt2_2{
+  
+  color:  rgb(190, 74, 74);
+  font-weight: bold;
+  margin-top: 70px;
+}
+
+.txtimg04{
+  color: white;
+  display: flex;
+  padding: 2%;
+  justify-content: space-around;
+  
+  
+}
+
+.njornal{
+     width: 350px;
+    height: 400px;
+    margin-left: 35px;
+}
+
+.tt3{
+  color: rgb(190, 74, 74);
+  font-weight: bold;
+}
+
+.subt3{
+  color: rgb(112, 112, 112);
+}
+
+.subt3_3{
+  color:  rgb(190, 74, 74);
+  font-weight: bold;
+  margin-top: 70px;}
+
+/* Iframe */
+.iframe{
+  background-color: rgb(56, 56, 56);
+  width: auto;
+  height: 600px;
+}
+
+.maps{
+  display: flex;
+  justify-content: flex-end;
+  
+}
+
+.tt4 h2{
+  padding: 2%;
+  color: white;
+  margin-left: 60px;
+  margin-top: 50px;
+}
+
+.maps iframe{
+  margin-right: 300px;
+}
+
+.rodape{
+    display: flex;
+    padding: 4%;
+    justify-content: space-around;
+    color: gray;
+}
+
+.rodape1{
+ margin-top: 20px;
+    width: 280px;
+}
+.rodape1 img{
+    width: 150px;
+    margin-bottom: 10px;
+}
+
+.rodape1 img{
+    width: 150px;
+    margin-bottom: 10px;
+}
+
+.rodape2{
+    margin-top: 24px;
+     width: 280px;
+}
+.rodape3{
+    margin-top: 24px;
+     width: 280px;
+}
+.rodape4{
+    margin-top: 23px;
+     width: 280px;
+}
+
+.imgrp2{
+  margin-top: 30px;
+}

@@ -1,0 +1,29 @@
+.exercicios{
+    display: flex;
+    justify-content: space-around;
+}
+
+#exercicio01{
+    background-color: rgb(159, 240, 195);
+  
+}
+#exercicio02{
+    background-color: rgb(255, 255, 255);
+    justify-content: center;
+    border: solid 2px black;
+}
+
+.textos{
+    display: flex;
+    justify-content: space-around;
+    font-family: Tahoma;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.txt01{
+    margin-top: 20px;
+}
+.txt02{
+    margin-top: 20px;
+}

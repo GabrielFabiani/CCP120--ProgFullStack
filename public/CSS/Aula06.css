@@ -1,0 +1,18 @@
+body{
+     background-image: url('../img/fundo.jpg');
+     background-size:cover
+}
+.inicio{
+    display: flex;
+    justify-content: center;
+}
+.txt{
+    display: flex;
+    justify-content: center;
+}
+
+#canvas1{
+    display: flex;
+    justify-content: center;
+    background-color: transparent;
+}

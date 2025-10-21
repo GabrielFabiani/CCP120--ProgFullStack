@@ -1,0 +1,16 @@
+{
+  "dependencies": {
+    "colors": "^1.4.0",
+    "express": "^5.1.0"
+  },
+  "name": "servidor",
+  "version": "1.0.0",
+  "description": "Este é um servidor",
+  "main": "servidor.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Gabriel Fabiani",
+  "license": "ISC"
+}

@@ -1,0 +1,21 @@
+#iframe01,#iframe02{
+  
+width: 560px; 
+height: 315px;
+}
+#iframe03{
+  width: 800;
+  height: 650;
+
+}
+/* Imagens */
+#img01{
+  width: 200px;
+  height: 230px;
+  border-radius: 100px;
+}
+#img02,#img03,#img04,#img05{
+  width: 490px;
+  height: 370px;
+  border-radius: 10px;
+}

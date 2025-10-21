@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../CSS/aula04.css">
+    <title>Adivinhação</title>
+</head>
+<body>
+    <div class="digite">
+        <div class="Num">
+            <label for="input" class="text">Número:</label>
+            <input type="text" id="input" placeholder="Digite um número" class="input">
+            <button onclick="verificar()">Adivinhar</button>
+        </div>
+        <div id="resultado"></div>
+    </div>
+
+    <script>
+        const numeroAleatorio = Math.floor(Math.random() * 10);
+        console.log("Número sorteado:", numeroAleatorio); // apenas para teste no console
+
+        function verificar() {
+            const valor = document.getElementById("input").value;
+            const resultado = document.getElementById("resultado");
+
+            if (valor === "") {
+                alert("Digite um número!");
+                return;
+            }
+
+            const numeroUsuario = parseInt(valor);
+            let mensagem = "";
+            let icone = "";
+
+            if (numeroUsuario === numeroAleatorio) {
+                mensagem = "Parabéns! Você acertou!";
+                icone = "<span id='icone' style='color: green;'>✔️</span>";
+            } else if (numeroUsuario > numeroAleatorio) {
+                mensagem = "Tente um número menor!";
+                icone = "<span id='icone' style='color: red;'>❌</span>";
+            } else {
+                mensagem = "Tente um número maior!";
+                icone = "<span id='icone' style='color: red;'>❌</span>";
+            }
+
+            resultado.innerHTML = mensagem + icone;
+        }
+    </script>
+</body>
+</html>
