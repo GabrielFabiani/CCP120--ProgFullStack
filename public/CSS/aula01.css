@@ -1,21 +1,80 @@
-#iframe01,#iframe02{
-  
-width: 560px; 
-height: 315px;
+body{
+  background-color: #B0B0B0;
 }
-#iframe03{
-  width: 800;
-  height: 650;
 
+.infos{
+  display: flex;
+   flex-direction: column;
+  justify-content: center;
+  font-family: Georgia;
+  font-weight: bold;
 }
-/* Imagens */
-#img01{
-  width: 200px;
-  height: 230px;
-  border-radius: 100px;
+
+.infos h1{
+  display: flex;
+  justify-content: center;
+  font-family: Georgia, 'Times New Roman', Times, serif;
 }
-#img02,#img03,#img04,#img05{
-  width: 490px;
-  height: 370px;
-  border-radius: 10px;
+
+.infos p{
+  padding: 5px; 
+  font-family: monospace;
+  display: flex;
+  justify-content: center;
+}
+
+.nav{
+  display: flex;
+}
+.nav p{
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  
+}
+.nav li{
+  font-family: Georgia;
+  font-weight: bold;
+}
+
+.hobbies {
+    display: flex;
+    justify-content: space-around; 
+}
+
+.item {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;    
+    text-align: center;     
+    margin: 10px;     
+}
+
+
+.item img {
+    
+    width: 250px;
+    height: 250px;
+    border-radius: 10px;
+    margin-top: 5px; 
+}
+
+
+.item p {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+h2{
+  display: flex;
+  justify-content: center;
+}
+
+.iframes{
+      display: flex;
+    justify-content: center;
+}
+
+.links{
+    display: flex;
+    justify-content: space-evenly;
+    font-family: cursive;
 }
