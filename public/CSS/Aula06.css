@@ -14,5 +14,28 @@ body{
 #canvas1{
     display: flex;
     justify-content: center;
-    background-color: transparent;
+    border: 1px solid;
+}
+.voltar {
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+    color: white;
+}
+
+.link-projetos {
+    display: inline-block;
+    margin-top: 10px;
+    background-color: #6bb3cd;
+    color: gray;
+    padding: 8px 15px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.link-projetos:hover {
+    background-color: gray;
+    color: white;
 }

@@ -1,40 +1,39 @@
-let canvas1 = document.getElementById('canvas1');
-let ctx1 = canvas1.getContext('2d');
+var http = require('http');
+var express = require('express');
+var colors = require('colors');
+var bodyParser = require('body-parser');
 
-class Retangulo {
-    constructor(srcImagem, x, y, largura, altura) {
-        this.img = new Image();
-        this.img.src = srcImagem;
-        this.x = x;
-        this.y = y;
-        this.largura = largura;
-        this.altura = altura;
-    }
+var app = express();
+app.use(express.static('./public'));
+app.use(bodyParser.urlencoded({ extended: false}))
+app.use(bodyParser.json())
+app.set('view engine', 'ejs')
+app.set('views', './views');
 
-    desenhe(contexto) {
-        
-            contexto.drawImage(this.img, this.x, this.y, this.largura, this.altura);
-        
-    }
-}
+var server = http.createServer(app);
+server.listen(80);
 
+console.log('Servidor rodando ...'.rainbow);
 
-let Beemovie = new Retangulo('../img/the-bee-movie-bee-movie.png', 125, 125, 50, 50);
+app.get('/', function (requisicao, resposta){
+resposta.redirect('home.html')
+})
 
-function animacao() {
-    ctx1.clearRect(0, 0, canvas1.width, canvas1.height);
-    Beemovie.desenhe(ctx1);
-    requestAnimationFrame(animacao);
-}
+app.get('/inicio', function (requisicao, resposta){
+var nome = requisicao.query.info;
+console.log(nome);
+})
 
-animacao();
+app.post('/inicio', function (requisicao, resposta){
+var data = requisicao.body.data;
+console.log(data);
+})
 
-canvas1.addEventListener('mousemove', function(evento) {
-    let rect = canvas1.getBoundingClientRect();
-    let x_mouse = evento.clientX - rect.left;
-    let y_mouse = evento.clientY - rect.top;
+app.get('/cadastro',function (requisicao, resposta){
+var nome = requisicao.query.nome;
+var sobrenome = requisicao.query.sobrenome;
+var nascimento = requisicao.query.nascimento;
+var civil = requisicao.query.civil;
 
-    // Centraliza a imagem no cursor (opcional)
-    Beemovie.x = x_mouse - Beemovie.largura / 2;
-    Beemovie.y = y_mouse - Beemovie.altura / 2;
-});
+resposta.render('resposta_cadastro', {nome, sobrenome, nascimento, civil})
+})

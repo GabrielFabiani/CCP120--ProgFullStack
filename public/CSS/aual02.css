@@ -21,3 +21,27 @@ th {
   background-color: #f3c88f; 
  
 }
+
+.voltar {
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+    color: white;
+}
+
+.link-projetos {
+    display: inline-block;
+    margin-top: 10px;
+    background-color: #FCE5C5;
+    color: gray;
+    padding: 8px 15px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.link-projetos:hover {
+    background-color: gray;
+    color: white;
+}

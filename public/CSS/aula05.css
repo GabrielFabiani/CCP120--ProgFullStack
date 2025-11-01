@@ -27,3 +27,27 @@
 .txt02{
     margin-top: 20px;
 }
+
+.voltar {
+    text-align: center;
+    padding: 15px;
+    margin-top: 20px;
+    color: white;
+}
+
+.link-projetos {
+    display: inline-block;
+    margin-top: 10px;
+    background-color: #a7a5a3;
+    color: #000000;
+    padding: 8px 15px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.link-projetos:hover {
+    background-color: gray;
+    color: white;
+}
