@@ -4,16 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login de Usuário</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../CSS/login.css">
 </head>
 <body>
-    <h1>Fazer Login</h1>
+    <div class="login-page">
+        <div class="form">
+            <form action="/login" method="post">
+                <h2><i class="fas fa-lock"></i> Login</h2>
+                <p>Email: <input type="email" name="email" required></p>
+                <p>Senha: <input type="password" name="senha" required></p>
+                <button type="submit" value="Entrar">Entrar</button>
+                <p class="message">Não tem cadastro? <a href="../Aula08/cadastro.html">Cadastre-se!</a></p>
+            </form>
+        </div>
+        <div class="voltar">
+            <p><a class="link-projetos" href="/">Projetos</a></p>
+        </div>
+    </div>
     
-    <form action="/login" method="post">
-        <p>Email: <input type="email" name="email" required></p>
-        <p>Senha: <input type="password" name="senha" required></p>
-        <input type="submit" value="Entrar">
-    </form>
-    
-    <p><a href="/">Voltar para Home</a></p>
 </body>
 </html>

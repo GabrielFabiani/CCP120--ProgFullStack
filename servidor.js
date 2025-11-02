@@ -38,7 +38,7 @@ app.post('/cadastra', function (requisicao, resposta) {
     USUARIOS.push({ email, senha });
     console.log(`Novo Usuário Cadastrado: ${email}`);
 
-    resposta.render('resposta', { 
+    resposta.render('resposta_cadastro', { 
         status: 'Sucesso no Cadastro!', 
         mensagem: `O usuário ${nomecompleto} foi cadastrado com sucesso. Total de usuários: ${USUARIOS.length}.`
     });

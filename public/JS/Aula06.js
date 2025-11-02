@@ -1,39 +1,89 @@
-var http = require('http');
-var express = require('express');
-var colors = require('colors');
-var bodyParser = require('body-parser');
+let canvas1 = document.getElementById('canvas1');
 
-var app = express();
-app.use(express.static('./public'));
-app.use(bodyParser.urlencoded({ extended: false}))
-app.use(bodyParser.json())
-app.set('view engine', 'ejs')
-app.set('views', './views');
+let ctx1 = canvas1.getContext('2d');
 
-var server = http.createServer(app);
-server.listen(80);
 
-console.log('Servidor rodando ...'.rainbow);
 
-app.get('/', function (requisicao, resposta){
-resposta.redirect('home.html')
-})
+class Retangulo {
 
-app.get('/inicio', function (requisicao, resposta){
-var nome = requisicao.query.info;
-console.log(nome);
-})
+    constructor(srcImagem, x, y, largura, altura) {
 
-app.post('/inicio', function (requisicao, resposta){
-var data = requisicao.body.data;
-console.log(data);
-})
+        this.img = new Image();
 
-app.get('/cadastro',function (requisicao, resposta){
-var nome = requisicao.query.nome;
-var sobrenome = requisicao.query.sobrenome;
-var nascimento = requisicao.query.nascimento;
-var civil = requisicao.query.civil;
+        this.img.src = srcImagem;
 
-resposta.render('resposta_cadastro', {nome, sobrenome, nascimento, civil})
-})
+        this.x = x;
+
+        this.y = y;
+
+        this.largura = largura;
+
+        this.altura = altura;
+
+    }
+
+
+
+    desenhe(contexto) {
+
+       
+
+            contexto.drawImage(this.img, this.x, this.y, this.largura, this.altura);
+
+       
+
+    }
+
+}
+
+
+
+
+
+let Beemovie = new Retangulo('../img/the-bee-movie-bee-movie.png', 125, 125, 50, 50);
+
+
+
+function animacao() {
+
+    ctx1.clearRect(0, 0, canvas1.width, canvas1.height);
+
+    Beemovie.desenhe(ctx1);
+
+    requestAnimationFrame(animacao);
+
+}
+
+animacao();
+
+
+canvas1.addEventListener('mousemove', function(evento) {
+    let rect = canvas1.getBoundingClientRect();
+    let x_mouse = evento.clientX - rect.left;
+    let y_mouse = evento.clientY - rect.top;
+
+    let novoX = x_mouse - Beemovie.largura / 2;
+    let novoY = y_mouse - Beemovie.altura / 2;
+
+    // 2. Define os limites
+    // Limite Mínimo (Lado Esquerdo/Topo): 0
+    let limiteMinX = 0;
+    let limiteMinY = 0;
+    
+    // Limite Máximo (Lado Direito/Fundo)
+    let limiteMaxX = canvas1.width - Beemovie.largura;
+    let limiteMaxY = canvas1.height - Beemovie.altura;
+
+    // 3. Aplica o "Clamping" (Limitação)
+    
+    // Para X: 
+    // Garante que Beemovie.x nunca seja menor que 0.
+    // Garante que Beemovie.x nunca seja maior que limiteMaxX.
+    Beemovie.x = Math.min(Math.max(limiteMinX, novoX), limiteMaxX);
+
+    // Para Y:
+    // Garante que Beemovie.y nunca seja menor que 0.
+    // Garante que Beemovie.y nunca seja maior que limiteMaxY.
+    Beemovie.y = Math.min(Math.max(limiteMinY, novoY), limiteMaxY);
+
+});

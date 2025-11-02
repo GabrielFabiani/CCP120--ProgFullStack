@@ -3,27 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Status da Aplicação</title>
-    <style>
-        body { font-family: Arial, sans-serif; text-align: center; padding: 50px; }
-        .success { color: green; }
-        .failure { color: red; }
-        h1 { margin-bottom: 20px; }
-    </style>
+    <link rel="stylesheet" href="../CSS/estilo.css">
+    <title>Status do login ou cadastro</title>
 </head>
 <body>
-    <h1 class="<%= status.includes('Sucesso') ? 'success' : 'failure' %>">
-        <%= status %>
-    </h1>
-    
-    <p><%= mensagem %></p>
-    
-    <hr>
-    
-    <p>
-        <a href="/">Voltar para Projetos (Home)</a> |
-        <a href="/login">Ir para a página de Login</a> |
-        <a href="/cadastra">Ir para a página de Cadastro</a>
-    </p>
+    <div class="card">
+        <div class="titulo">
+            <h1 class="<%= status.includes('Sucesso') ? 'success' : 'failure' %>">
+                <%= status %>
+            </h1>
+            <p><%= mensagem %></p>
+            <p>Coisas boas estão por vir! Aguarde</p>
+        </div>
+         <p>
+            <a href="/">Projetos (Home)</a> |
+            <a href="/login">Página de Login</a> |
+            <a href="/cadastra">Página de Cadastro</a>
+        </p>
+    </div>
+   
+   
 </body>
 </html>

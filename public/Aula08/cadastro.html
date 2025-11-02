@@ -4,17 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastro de Usuário</title>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../CSS/cadastro.css">
 </head>
 <body>
-    <h1>Cadastrar novo usuário</h1>
+    <div class="login-page">
+        <div class="form">
+            <form method="post" action="/cadastra">
+                <div class="cabec">
+                <img src="../img/cadastro_icone.png">
+                <h2>Cadastro</h2>
+                </div>
+                <p>Nome completo: <input type="text" name="nomecompleto" required></p>
+                <p>Email: <input type="email" name="email" required></p>
+                <p>Senha: <input type="password" name="senha" required></p>
+                <button type="submit" value="Salvar Cadastro">Cadastre-se</button>
+                <p class="message">Já tem cadastro? <a href="../Aula08/login.html">Faça login!</a></p>
+            </form>
+        </div>
+        <div class="voltar">
+            <p><a class="link-projetos" href="/" target="_blank">Projetos</a></p>
+        </div>
+    </div>
     
-    <form method="post" action="/cadastra">
-        <p>Nome completo: <input type="text" name="nomecompleto" required></p>
-        <p>Email: <input type="email" name="email" required></p>
-        <p>Senha: <input type="password" name="senha" required></p>
-        <input type="submit" value="Salvar Cadastro">
-    </form>
-    
-    <p><a href="/">Voltar para Home</a></p>
 </body>
 </html>
