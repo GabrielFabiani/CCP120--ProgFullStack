@@ -25,7 +25,6 @@ app.get('/', function (requisicao, resposta){
 
 
 app.get('/cadastra',function (requisicao, resposta){
-    // [CORREÇÃO 2] Uso de path.join e __dirname para caminho absoluto
     resposta.sendFile(path.join(__dirname, 'public', 'Aula08', 'cadastro.html'));
 });
 
@@ -38,15 +37,13 @@ app.post('/cadastra', function (requisicao, resposta) {
     USUARIOS.push({ email, senha });
     console.log(`Novo Usuário Cadastrado: ${email}`);
 
-    resposta.render('resposta_cadastro', { 
-        status: 'Sucesso no Cadastro!', 
-        mensagem: `O usuário ${nomecompleto} foi cadastrado com sucesso. Total de usuários: ${USUARIOS.length}.`
-    });
+    //Redireciona para a página de login quando fazer o cadastro
+   resposta.redirect('/login?success=1');
 });
 
 
 app.get('/login',function (requisicao, resposta){
-    // [CORREÇÃO 2] Uso de path.join e __dirname para caminho absoluto
+    
     resposta.sendFile(path.join(__dirname, 'public', 'Aula08', 'login.html'));
 });
 
@@ -58,14 +55,16 @@ app.post('/login', function (requisicao, resposta) {
     
     const usuarioEncontrado = USUARIOS.find(user => user.email === email && user.senha === senha);
     
-    let status, mensagem;
+    let status, mensagem,mensagem2;
     if (usuarioEncontrado) {
         status = 'Sucesso no Login!';
         mensagem = `Bem-vindo(a), ${email}!`;
+        mensagem2 = 'Coisas boas vem por ai! Aguarde'
     } else {
-        status = 'Falha no Login!';
+        status = 'Falha no Login! email e senha não cadastrados!';
         mensagem = 'Email ou senha inválidos. Tente novamente.';
     }
 
-    resposta.render('resposta_cadastro', { status, mensagem });
+    resposta.render('resposta_cadastro', { status, mensagem,mensagem2 });
 });
+

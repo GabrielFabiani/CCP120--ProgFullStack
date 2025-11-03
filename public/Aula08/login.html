@@ -23,5 +23,12 @@
         </div>
     </div>
     
+    <script>
+  // Verifica se a URL contém ?success=1
+  const params = new URLSearchParams(window.location.search);
+  if (params.get('success') === '1') {
+    alert('✅ Usuário cadastrado com sucesso! Faça login para continuar.');
+  }
+</script>
 </body>
 </html>
