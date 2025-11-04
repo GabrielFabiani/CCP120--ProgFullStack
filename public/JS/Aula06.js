@@ -7,49 +7,28 @@ let ctx1 = canvas1.getContext('2d');
 class Retangulo {
 
     constructor(srcImagem, x, y, largura, altura) {
-
         this.img = new Image();
-
         this.img.src = srcImagem;
-
         this.x = x;
-
         this.y = y;
-
         this.largura = largura;
-
         this.altura = altura;
 
     }
 
-
-
     desenhe(contexto) {
-
-       
-
-            contexto.drawImage(this.img, this.x, this.y, this.largura, this.altura);
-
-       
-
+     contexto.drawImage(this.img, this.x, this.y, this.largura, this.altura);
     }
 
 }
 
 
-
-
-
 let Beemovie = new Retangulo('../img/the-bee-movie-bee-movie.png', 125, 125, 50, 50);
-
-
 
 function animacao() {
 
     ctx1.clearRect(0, 0, canvas1.width, canvas1.height);
-
     Beemovie.desenhe(ctx1);
-
     requestAnimationFrame(animacao);
 
 }

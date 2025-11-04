@@ -15,13 +15,14 @@
         </div>
         <div id="resultado"></div>
     </div>
+
     <div class="voltar">
         <p><a class="link-projetos" href="../projects.html">Projetos</a></p>
     </div>
 
     <script>
         const numeroAleatorio = Math.floor(Math.random() * 10);
-        console.log("Número sorteado:", numeroAleatorio); // apenas para teste no console
+        console.log("Número sorteado:", numeroAleatorio);
 
         function verificar() {
             const valor = document.getElementById("input").value;
@@ -33,21 +34,17 @@
             }
 
             const numeroUsuario = parseInt(valor);
-            let mensagem = "";
-            let icone = "";
 
             if (numeroUsuario === numeroAleatorio) {
-                mensagem = "Parabéns! Você acertou!";
-                icone = "<span id='icone' style='color: green;'>✔️</span>";
+                resultado.textContent = "Parabéns! Você acertou!";
+                document.body.style.backgroundColor = "lightgreen";
             } else if (numeroUsuario > numeroAleatorio) {
-                mensagem = "Tente um número menor!";
-                icone = "<span id='icone' style='color: red;'>❌</span>";
+                resultado.textContent = "Tente um número menor!";
+                document.body.style.backgroundColor = "lightcoral";
             } else {
-                mensagem = "Tente um número maior!";
-                icone = "<span id='icone' style='color: red;'>❌</span>";
+                resultado.textContent = "Tente um número maior!";
+                document.body.style.backgroundColor = "lightyellow";
             }
-
-            resultado.innerHTML = mensagem + icone;
         }
     </script>
 </body>
